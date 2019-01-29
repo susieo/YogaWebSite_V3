@@ -1,0 +1,26 @@
+.container {
+    margin: 0 1% 1% 1%;
+    padding: 5%;
+    background-color: blue;
+    display: block-inline;
+    max-width: 98%;
+    height: 96vh;
+} 
+
+.card {
+    height: 77vh;
+}
+
+.buttonLink {
+    margin: 2% 45% 3% 45%;
+}
+
+p {
+    font-size: 3vh;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    padding: 2%
+}

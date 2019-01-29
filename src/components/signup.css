@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+
+
+.welcomeText {
+    display: block;
+    text-align: center;
+}
+
+.grid {
+    background-color: lightblue;
+    border:thin solid red;  
+    /* or through padding */
+    min-height: 80vh;
+}
+
+.loginContainer {
+    background-color: white;
+    max-width: 600px;
+    min-height: 300px;
+    margin: auto;
+    margin-top:50px;
+    border:thin solid white;
+}
+
+
+.form {
+    display: block;
+    text-align: center;
+    border-spacing: 2%;
+    margin: 0 auto;
+   
+    width:80%;
+    border:thin solid red;
+}
+.form_login {
+    display: block;
+    text-align: center;
+    border-spacing: 2%;
+    margin: 0 auto;
+   
+    width:80%;
+    border:thin solid red;
+}
+
+
+button {
+    color: white;
+    background-color: blue;
+}

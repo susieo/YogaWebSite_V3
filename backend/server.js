@@ -46,21 +46,23 @@ const apiRouter = express
     })
   })
 
-  .get("/users/:email", (req, res, next) => {
-    console.log(req.params.email)
-
-    User.find(req.params.email,(err,user)=>{
+  .post("/login", (req, res, next) => {
+    console.log(req.body)
+    return User.findOne({email:req.body.email},(err,user)=>{
       if(err) next(err);
-      if(!user) {
-        // handle if no user is found
+      if(!user){
         return next({
-          message: "No user was found"
+          message: "No user found with that email."
         })
       }
-      return res.status(200).json({
-        user:user
-      })
-    })
+      if(user.password === req.body.password){
+        return res.status(200).json(user)
+      } else {
+        return next({
+          message: "Passwords do not match"
+        })
+      }
+  })
   })
 
 

@@ -15,12 +15,21 @@ export default {
             })
     },
 
-    getBlogInfo:() =>{
+    getBlogInfo: () => {
         return axios
-        .get(getURl(`/api/blogs/`))
+            .get(getURl(`/api/blogs/`))
             .then(response => {
                 console.log(response.data.blogs)
                 return response.data.blogs
             })
-        }
+    },
+
+    postLoginUser: (userInfo) => {
+        console.log(userInfo)
+        return axios
+            .post(getURl("/api/login"), userInfo)
+            .then(response => {
+                return response.data
+            })
+    },
 }

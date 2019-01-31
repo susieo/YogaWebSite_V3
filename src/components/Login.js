@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import Api from "./services/api"
 import "./login.css";
 
 class Login extends Component {
@@ -22,10 +23,14 @@ class Login extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormLogin = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    this.makeapicall()
+    const userToLogin={
+      email: this.state.email,
+      password: this.state.password
+    }
+    return Api.postLoginUser(userToLogin)
     .then(response => {
       console.log(response);
       alert(`Welcome to our Yogi Place`);
@@ -34,7 +39,7 @@ class Login extends Component {
       //   lastName: ""
       // })
       // this.props.history.push(`/feed/${response.data.email}`)
-      this.props.history.push(`/feedlogin/${response.data.email}`)
+      this.props.history.push(`/feedlogin/${response._id}`)
     })
     .catch(err => console.log(err));
 
@@ -92,7 +97,7 @@ class Login extends Component {
                   />
                   </div>
              
-                  <button onClick={this.handleFormSubmit}>Login</button>
+                  <button onClick={this.handleFormLogin}>Login</button>
             </form>
                 
              <div className="buttonLink">    

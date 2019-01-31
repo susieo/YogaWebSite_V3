@@ -22,7 +22,7 @@ class App extends Component {
         <Route exact path="/" component={Signup} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/feed/:id" component={Feed} />
-        <Route exact path="/feedlogin/:email" component={FeedLogin} />
+        <Route exact path="/feedlogin/:id" component={FeedLogin} />
         <Route exact path="/findstudio" component={FindStudio} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/pages/blogs" component={Blogs} />

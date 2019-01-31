@@ -25,13 +25,16 @@ class FeedLogin extends Component {
 
     state = {
         user: {
-            id: "i love tequila"
+            id: "i love tequila",
+            name:"",
+            lastname:"",
+            email:""
         },
         blogs:[]
     }
 
-    componentWillMount = () => {
-        Api.getUsersInfo(this.props.match.params.email)
+    componentDidMount = () => {
+        Api.getUsersInfo(this.props.match.params.id)
             .then(userInfo => {
                 return this.setState({
                     user: userInfo
